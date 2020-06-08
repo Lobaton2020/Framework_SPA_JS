@@ -1,0 +1,24 @@
+<div class="container">
+    <div id="table-empty"></div>
+    <div id="table-content" class="table-responsive animated fadeIn">
+        <table class="table table bordered">
+            <thead>
+                <th>#</th>
+                <th>Link</th>
+                <th>Accion</th>
+            </thead>
+            <tbody id="contenido-body"></tbody>
+        </table>
+
+        <template id="fila">
+            <tr>
+                <td class="id"></td>
+                <td class="url"><a class="link" target="_blank" href=""></a></td>
+                <td class="acciones d-flex">
+                    <button type="button" class="actualizar btn btn-danger mr-1"><i class="fas fa-edit"></i></button>
+                    <button type="button" class="eliminar btn btn-primary"><i class="fas fa-trash"></i></button>
+                </td>
+            </tr>
+        </template>
+    </div>
+</div>
