@@ -36,6 +36,7 @@ import { LinkService } from "../services/link.service.js";
 
         },
         // lISTAMOS TODOS LOS LINKS QUE EXISTEN
+        //------------------------------------------------------------------------------------------------------------------------------
         listar: function() {
             vista.appendChild(arr).innerHTML = lob.loader;
 
@@ -69,12 +70,15 @@ import { LinkService } from "../services/link.service.js";
                     e.preventDefault();
                     self.eliminar(e.target.dataset.id);
                 }, false);
-                actualizar.dataset.id = registro.id;
-                actualizar.addEventListener("click", function(e) {
+                const actualizarEvent = (e) => {
                     e.preventDefault();
                     e.target.disabled = true;
                     self.editar(e.target.dataset.id);
-                }, false);
+                    // actualizar.removeEventListener("click", actualizarEvent);
+
+                }
+                actualizar.dataset.id = registro.id;
+                actualizar.addEventListener("click", actualizarEvent);
 
                 id.textContent = registro.id;
                 link.textContent = registro.title != "" ? registro.title : registro.url;
@@ -96,14 +100,13 @@ import { LinkService } from "../services/link.service.js";
 
             arr.style.display = "none";
         },
+        //------------------------------------------------------------------------------------------------------------------------------
         editar: async function(id) {
-            console.log("Editar")
 
             vista.appendChild(arr).innerHTML = lob.loader;
             let link = await LinkService.getLink(id),
                 form = lob.getById("form-tarea"),
                 self = this;
-            console.log(link)
             if (link) {
                 form.childNodes[1].childNodes[3].value = link.title;
                 form.childNodes[3].childNodes[3].value = link.url;
@@ -112,13 +115,17 @@ import { LinkService } from "../services/link.service.js";
                 form.childNodes[5].classList.add("btn-success");
                 form.childNodes[5].textContent = "Actualizar";
                 form.childNodes[5].onclick = null;
-                const removerEvento = (e) => {
+                form.childNodes[5].onclick = function(e) {
+                    e.target.disabled = false;
+                    self.actualizar(id, form);
+                };
 
-                    e.target.disabled = true;
-                    self.actualizar(id, lob.getById("form-tarea"))
-                    form.childNodes[5].removeEventListener("click", removerEvento);
-                }
-                form.childNodes[5].addEventListener("click", removerEvento);
+                // const removerEvento = (e) => {
+                //         e.target.disabled = false;
+                //         self.actualizar(id, form);
+                //     }
+                // form.childNodes[5].removeEventListener("click", removerEvento);
+                // form.childNodes[5].addEventListener("click", removerEvento);
 
             } else {
                 Swal.fire(
@@ -129,8 +136,14 @@ import { LinkService } from "../services/link.service.js";
             }
             arr.style.display = "none";
         },
+        //------------------------------------------------------------------------------------------------------------------------------
         actualizar: async function(id, form) {
             console.log("Actualizar")
+                // const removeEvent = (e) => {
+                //     console.log("Evento de boton actu")
+                // }
+                // lob.getById("form-tarea").addEventListener("click", removeEvent);
+                // lob.getById("form-tarea").removeEventListener("click", removeEvent);
             let self = this;
             vista.appendChild(arr).innerHTML = lob.loader;
             let datos = {
@@ -145,10 +158,16 @@ import { LinkService } from "../services/link.service.js";
                 form.childNodes[5].classList.remove("btn-success");
                 form.childNodes[5].textContent = "Guardar URL";
                 form.childNodes[5].disabled = false;
-
-                form.childNodes[5].addEventListener("click", function() {
+                form.childNodes[5].onclick = null;
+                form.childNodes[5].onclick = function() {
                     self.create(form);
-                });
+                };
+
+                // const removeEvent = (e) => {
+                //     self.create(form);
+                // }
+                // form.childNodes[5].removeEventListener("click", removeEvent);
+                // form.childNodes[5].addEventListener("click", removeEvent);
 
                 self.listar();
                 form.reset();
@@ -167,7 +186,7 @@ import { LinkService } from "../services/link.service.js";
             arr.style.display = "none";
 
         },
-
+        //------------------------------------------------------------------------------------------------------------------------------
         eliminar: async function(id) {
             var self = this;
             Swal.fire({
