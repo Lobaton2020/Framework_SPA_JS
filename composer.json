@@ -1,0 +1,12 @@
+{
+    "name": "Framework_SPA_JS",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Lobaton2020/Framework_MVC_SPA_JS.git"
+        }
+    ],
+    "require": {
+        "lobaton/framework-spa-js": "dev-master"
+    }
+}
