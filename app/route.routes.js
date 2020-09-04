@@ -1,12 +1,13 @@
 (function(window, document) {
     document.addEventListener("DOMContentLoaded", () => {
         window.laurel.getBy('view').router()
-            .route("/", ["app/views/init.html"], null, () => {
+            .route("/", ["app/components/home/home.component.html"], null, () => {
                 // window.location.hash = "#/links";
             })
-            .route("/links/edit", ["app/views/links/update.html"], null, null)
-            .route("/error404", ["app/views/templates/error404.html"], null, null)
-            .route("/links", ["app/views/links/create.html", "app/views/links/list.html", ], 'link', function() {
+            .route("/links", [
+                "app/components/create-link/create-link.component.html",
+                "app/components/links/links.component.html"
+            ], 'link', function() {
                 laurel.getController().list();
             })
     });

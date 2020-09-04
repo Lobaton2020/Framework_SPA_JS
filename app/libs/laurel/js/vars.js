@@ -28,16 +28,17 @@ export default {
     // son los componentes predefinidos para mostrar al usuario
     defaultComponents: [{
             element: "navbar",
-            route: "app/views/layouts/navbar.html"
+            route: "app/components/layouts/navbar/navbar.component.html"
         },
         {
             element: "slidebar",
-            route: "app/views/layouts/slidebar.html"
-        },
-        {
-            element: "footer",
-            route: "app/views/layouts/footer.html"
+            route: "app/components/layouts/sidebar/sidebar.component.html"
         }
+        // ,
+        // {
+        //     element: "footer",
+        //     route: "app/components/layouts/footer.html"
+        // }
     ],
     urlLaurel: location.origin.concat(location.pathname),
     urlApi: "",

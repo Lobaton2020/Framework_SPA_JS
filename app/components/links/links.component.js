@@ -1,4 +1,4 @@
-import { LinkService } from "../services/link.service.js";
+import { LinkService } from "../../services/link.service.js";
 
 (function(window, document) {
     "use strict"
