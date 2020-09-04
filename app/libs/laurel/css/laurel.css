@@ -1,44 +1,39 @@
-@media only screen and (max-width:720px) {
-    #error {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        background-image: url("../img/error404.png");
-        background-attachment: fixed;
-        background-position: center;
-        background-size: 200% 50%;
-        background-repeat: no-repeat;
-    }
-    #regresarNotfound {
-        position: absolute;
-        left: 35%;
-        right: 35%;
-        top: 70%;
-        bottom: auto;
-    }
+.hide-overflow {
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
-@media only screen and (min-width:720px) {
-    #error {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url("../img/error404.png");
-        background-color: blue;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-    }
-    #regresarNotfound {
-        position: absolute;
-        left: 45%;
-        right: 45%;
-        top: 70%;
-        bottom: auto;
-    }
+.loading {
+    z-index: 2000;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    animation-name: loaderBackground;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+.loadingOut {
+    /* background-color: black !important; */
+    animation-name: loaderBackgroundHide;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+#load {
+    /* padding: 20px; */
+    width: 100px;
+    color: white;
+    position: absolute;
+    left: 47%;
+    right: 50%;
+    top: 40%;
+    bottom: 50%;
+    opacity: 8;
+    z-index: 9;
 }
 
 #animation {
@@ -47,7 +42,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    position: absolute;
+    /* position: absolute; */
     animation-name: animacion;
     animation-delay: 5s;
     animation-duration: 3s;
@@ -102,7 +97,7 @@
 }
 
 img {
-    cursor: no-drop;
+    /* cursor: no-drop; */
 }
 
 #el {
@@ -128,8 +123,8 @@ img {
 }
 
 #figure {
-    margin: 0px auto;
-    margin-bottom: 5px;
+    margin: 0 auto;
+    z-index: 2100;
     width: 25px;
     height: auto;
     background-color: inherit;
@@ -142,43 +137,30 @@ img {
 }
 
 #text::before {
-    content: 'Cargando...';
+    content: 'Cargando..';
+    font-weight: 550;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14.7px;
 }
 
 .elemento1 {
-    width: 11px;
-    height: 11px;
+    margin: 3px;
+    width: 20px;
+    height: 20px;
     background-color: red;
     border-radius: 50%;
-    animation: colors;
+    animation: colors1;
     animation-duration: 7s;
     animation-iteration-count: infinite;
 }
 
 .elemento2 {
-    display: none;
-    margin: auto auto;
-    margin-bottom: 0px;
-    /* margin-right: 0px; */
+    margin: 3px;
+    width: 20px;
+    height: 20px;
     vertical-align: bottom;
-    width: 11px;
-    height: 11px;
     border-radius: 50%;
-    animation: colors;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-}
-
-.elemento3 {
-    margin: auto auto;
-    margin-bottom: 0px;
-    margin-right: 0px;
-    vertical-align: bottom;
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    animation: colors;
+    animation: colors2;
     animation-duration: 5s;
     animation-iteration-count: infinite;
 }
@@ -195,20 +177,56 @@ img {
     }
 }
 
-@keyframes colors {
+@keyframes colors1 {
     0% {
         background-color: red;
     }
-    25% {
-        background-color: orangered;
+    33% {
+        background-color: blue;
     }
-    50% {
+    66% {
         background-color: yellow;
     }
-    75% {
-        background-color: green
+    100% {
+        background-color: red;
+    }
+}
+
+@keyframes colors2 {
+    0% {
+        background-color: green;
+    }
+    33% {
+        background-color: yellow;
+    }
+    66% {
+        background-color: blue
     }
     100% {
-        background-color: blue;
+        background-color: green;
+    }
+}
+
+@keyframes loaderBackground {
+    0% {
+        background-color: transparent;
+        opacity: 1;
+    }
+    100% {
+        background-color: black;
+        opacity: 0.7;
+    }
+}
+
+@keyframes loaderBackgroundHide {
+    0% {
+        background-color: black;
+        opacity: 0.7;
+        visibility: visible;
+    }
+    100% {
+        background-color: transparent;
+        visibility: hidden;
+        opacity: 1;
     }
 }

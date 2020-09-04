@@ -9,34 +9,34 @@
     <link rel="stylesheet" href="app/libs/animate/animate.min.css">
     <link rel="stylesheet" href="app/libs/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="app/libs/sweetalert/css/sweetalert.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="app/libs/laurel/css/laurel.css">
+    <link rel="stylesheet" href="assets/css/styles-general.css">
     <title>Mi sitio web</title>
 </head>
 
 <body>
-    <div id="navbar"></div>
-    <div id="slidebar"></div>
-    <div id="vista"></div>
-    <footer id="footer"></footer>
-
-    <script src="app/libs/mylibrary.js"></script>
-    <script src="app/route.routes.js"></script>
-    <script type="module" id="controller"></script>
-    <!-- <button id="go">Go</button>
-    <script>
-        let dato = lob.getById("go");
-
-        function removeEvent(e) {
-            console.log("Este es el manejador del evento")
-        }
-
-        function remove(e) {
-            console.log("Esto no es nada")
-        }
-        dato.addEventListener("click", removeEvent);
-        dato.removeEventListener("click", removeEvent);
-    </script> -->
-    <!-- importacion de librerias -->
+    <!-- your tags -->
+    <div id="app">
+        <div id="navbar"></div>
+        <div id="slidebar"></div>
+        <div id="view">
+            <div id="create"></div>
+            <div id="list"></div>
+        </div>
+        <footer id="footer"></footer>
+    </div>
+    <!-- default tags -->
+    <div id="default-view"></div>
+    <div id="loading"></div>
+    <div id="modal-view"></div>
+    <!-- import library of SPA -->
+    <script defer type="module" src="app/libs/laurel/js/laurel.js"></script>
+    <!-- import routes -->
+    <script defer src="app/route.routes.js"></script>
+    <!-- import controllers with type="module" -->
+    <script defer type="module" src="app/controllers/link.controller.js"></script>
+    <script defer src="app/handlers/link.handler.js"></script>
+    <!-- import  others librarys -->
     <script src="app/libs/jquery/jquery.min.js"></script>
     <script src="app/libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="app/libs/fontawesome/js/fontawesome.min.js"></script>
