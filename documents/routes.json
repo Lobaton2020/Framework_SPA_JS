@@ -1,0 +1,91 @@
+[{
+        "title": "Auth - Default",
+        "method": "GET",
+        "route": "/auth",
+        "description": "Get data credentials"
+    },
+    {
+        "title": null,
+        "method": "POST",
+        "route": "/auth/login",
+        "description": "Try to validate the credentials"
+    },
+    {
+        "title": null,
+        "method": "POST",
+        "route": "/auth/logout",
+        "description": "Close the sesssion"
+    },
+    {
+        "title": "Users",
+        "method": "GET",
+        "route": "/users",
+        "description": "Get all users with pagination"
+    },
+    {
+        "title": null,
+        "method": "GET",
+        "route": "/users/edit/{id}",
+        "description": "Get user by id"
+    },
+    {
+        "title": null,
+        "method": "POST",
+        "route": "/users/store",
+        "description": "Store the user"
+    },
+    {
+        "title": null,
+        "method": "POST",
+        "route": "/users/delete",
+        "description": "Delete a user by id,"
+    },
+    {
+        "title": "Links",
+        "method": "GET",
+        "route": "/links",
+        "description": "Get all links with pagination"
+    },
+    {
+        "title": null,
+        "method": "GET",
+        "route": "/links/edit/{id}",
+        "description": "Get link by id"
+    },
+    {
+        "title": null,
+        "method": "POST",
+        "route": "/links/store",
+        "description": "Store the link"
+    },
+    {
+        "title": null,
+        "method": "POST",
+        "route": "/links/delete",
+        "description": "Delete a link by id,"
+    },
+    {
+        "title": "Notes",
+        "method": "GET",
+        "route": "/notes",
+        "description": "Get all notes with pagination"
+    },
+    {
+        "title": null,
+        "method": "GET",
+        "route": "/notes/edit/{id}",
+        "description": "Get note by id"
+    },
+    {
+        "title": null,
+        "method": "POST",
+        "route": "/notes/store",
+        "description": "Store the note"
+    },
+    {
+        "title": null,
+        "method": "POST",
+        "route": "/notes/delete",
+        "description": "Delete a note by id,"
+    }
+]

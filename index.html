@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/libs/toastr/css/toastr.min.css">
+    <link rel="stylesheet" href="app/libs/animate/animate.min.css">
+    <link rel="stylesheet" href="app/libs/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="app/libs/sweetalert/css/sweetalert.min.css">
+    <link rel="stylesheet" href="app/libs/laurel/css/laurel.css">
+    <link rel="stylesheet" href="assets/css/styles-general.css">
+    <link rel="stylesheet" href="assets/autoloader/styles-components.min.css">
+    <title>Mi sitio web</title>
+</head>
+
+<body>
+    <!-- your tags -->
+    <div id="app">
+        <div id="navbar"></div>
+        <div id="slidebar"></div>
+        <div id="view">
+            <div id="create"></div>
+            <div id="list"></div>
+        </div>
+        <footer id="footer"></footer>
+    </div>
+    <!-- default tags -->
+    <div id="default-view"></div>
+    <div id="loading"></div>
+    <div id="modal-view"></div>
+    <!-- import library of SPA -->
+    <script defer type="module" src="app/libs/laurel/js/laurel.js"></script>
+    <script defer src="app/libs/init.js"></script>
+    <!-- import routes -->
+    <script defer src="app/route.routes.js"></script>
+    <!-- import dependences of components -->
+    <script defer src="assets/autoloader/handlers-components.min.js"></script>
+    <script defer type="module" src="app/components/links/links.component.js"></script>
+    <script defer type="module" src="app/components/home/home.component.js"></script>
+    <script defer type="module" src="app/components/users/users.component.js"></script>
+    <!-- import  others librarys-->
+    <script src="app/libs/jquery/jquery.min.js "></script>
+    <script src="app/libs/bootstrap/js/bootstrap.min.js "></script>
+    <script src="app/libs/fontawesome/js/fontawesome.min.js "></script>
+    <script src="app/libs/toastr/js/toastr.min.js "></script>
+    <script src="app/libs/sweetalert/js/sweetalert.min.js "></script>
+</body>
+
+</html>

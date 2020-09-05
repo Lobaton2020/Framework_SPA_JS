@@ -1,0 +1,9 @@
+<?php
+
+class :model: extends Model
+{
+    protected $table = "";
+    protected $primaryKey = "";
+    protected $foreignKey = "";
+    
+}
