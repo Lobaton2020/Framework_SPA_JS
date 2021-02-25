@@ -1,0 +1,94 @@
+html {
+  box-sizing: border-box;
+}
+
+.text-center {
+  text-align: center;
+}
+.center {
+  display: block;
+  margin: 0 auto;
+}
+
+.loader {
+  margin: 1rem auto;
+}
+
+.form-search {
+  margin-top: 1rem;
+  border-radius: 5px;
+  background-color: aliceblue;
+  width: 20rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  padding: 0.3rem;
+}
+
+.mb-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.grid-fluid {
+  margin: auto 6rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+}
+
+.post-card {
+  margin: 0.5rem;
+  padding: 0.7rem;
+  /* width: 25%; */
+  background-color: #efefef;
+}
+.post-card > p,
+.post-card > h2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.img-container {
+  width: 100%;
+}
+
+.error {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e74c3c;
+  padding: 0.2rem;
+  margin: 1rem auto;
+  width: 50rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 5px #bbb;
+}
+.post-page {
+  margin: 1rem;
+  padding: 1rem;
+  width: 1200px;
+  box-shadow: 0px 0px 10px gray;
+  background-color: #fefefe;
+  border: 1px solid black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+video,
+.post-page > img {
+  width: 100% !important;
+}
+.post-page aside {
+  text-align: center;
+}
+
+.error {
+  margin: auto;
+  width: 50rem;
+  padding: 20px;
+  background-color: #e74c3c;
+  color: white;
+}
+mark {
+  background-color: teal;
+  padding: 10px;
+  border-radius: 2rem;
+  color: white;
+}
